@@ -12,22 +12,18 @@
                             {{ $event->date }} -
                             {{ $event->capacity }}
                         </div>
-                        {{--                         <div class="card-footer">
-                            {{ $event->type ? $event->type->name : 'No Type' }}
 
-                        </div> --}}
-                        {{--                         <div class="card-footer">
-                            <span><strong>Authors:</strong></span>
-                            @if (count($event->authors) > 0)
-                                @foreach ($event->authors as $author)
-                                    {{ $author->name }}
-                                    ({{ $author->country }})
+                        <div class="card-footer">
+                            <span><strong>Tags:</strong></span>
+                            @if (count($event->tags) > 0)
+                                @foreach ($event->tags as $tag)
+                                    {{ $tag->name }}
                                 @endforeach
                             @else
-                                <span>No Author found</span>
+                                <span>No Tag found</span>
                             @endif
 
-                        </div> --}}
+                        </div>
                     </div>
                     <div>
                         <a href="{{ route('admin.events.edit', $event->id) }}" class="btn btn-primary m-auto text-white">Edit

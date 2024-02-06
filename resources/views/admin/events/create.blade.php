@@ -41,7 +41,7 @@
                     <input type="number" class="form-control @error('capacity') is-invalid @enderror" id="capacity"
                         placeholder="Insert Conslution" name= "capacity" value="{{ old('capacity') }}">
                 </div>
-                {{--                 <div class="mb-3">
+                <div class="mb-3">
                     <label for="exampleSelect" class="form-label">Select multiple options</label>
                     <select class="form-select" name="tags[]" id="tags" multiple>
 
@@ -50,7 +50,7 @@
                         @endforeach
 
                     </select>
-                </div> --}}
+                </div>
         </div>
 
         <button type="submit" class="btn btn-primary">Insert</button>

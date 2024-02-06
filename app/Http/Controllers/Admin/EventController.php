@@ -19,7 +19,8 @@ class EventController extends Controller
     public function index()
     {
         $events = Event::all();
-        return view('admin.events.index', compact('events'));
+        $tags = Tag::all();
+        return view('admin.events.index', compact('events', 'tags'));
     }
 
     /**
@@ -29,7 +30,8 @@ class EventController extends Controller
      */
     public function create()
     {
-        return view('admin.events.create');
+        $tags = Tag::all();
+        return view('admin.events.create', compact('tags'));
     }
 
     /**
@@ -72,8 +74,8 @@ class EventController extends Controller
      */
     public function edit(Event $event)
     {
-        /*     $tags = Tag::all(); */
-        return view("admin.events.edit", compact("event", /* 'tags' */));
+        $tags = Tag::all();
+        return view("admin.events.edit", compact("event",  'tags'));
     }
 
     /**
@@ -89,10 +91,10 @@ class EventController extends Controller
 
         $event->fill($validated);
         $event->update();
-        /* 
-        if ($request->authors) {
-            $event->authors()->attach($request->authors);
-        } */
+
+        if ($request->tags) {
+            $event->tags()->attach($request->tags);
+        }
 
 
         return redirect()->route("admin.events.index");

@@ -286,3 +286,10 @@ Adesso invece quella cartella andrà creata sotto "views/admin"
 ```bash
 /resources/views/admin/posts/*.blade.php
 ```
+
+
+NOTE: In case of 403 ERROR in CRUD, modify the following boolean to TRUE which is by default is FALSE (in folder REQUESTS - to file STORE and UPDATE:
+    public function authorize()
+    {
+        return true;
+    }

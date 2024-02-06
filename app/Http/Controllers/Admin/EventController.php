@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Event;
 use App\Http\Requests\StoreEventRequest;
 use App\Http\Requests\UpdateEventRequest;
+use App\Models\Tag;
 
 class EventController extends Controller
 {
@@ -71,7 +72,8 @@ class EventController extends Controller
      */
     public function edit(Event $event)
     {
-        //
+        /*     $tags = Tag::all(); */
+        return view("admin.events.edit", compact("event", /* 'tags' */));
     }
 
     /**
@@ -83,7 +85,17 @@ class EventController extends Controller
      */
     public function update(UpdateEventRequest $request, Event $event)
     {
-        //
+        $validated = $request->validated();
+
+        $event->fill($validated);
+        $event->update();
+        /* 
+        if ($request->authors) {
+            $event->authors()->attach($request->authors);
+        } */
+
+
+        return redirect()->route("admin.events.index");
     }
 
     /**
@@ -94,6 +106,8 @@ class EventController extends Controller
      */
     public function destroy(Event $event)
     {
-        //
+        $event->delete();
+
+        return redirect()->route('admin.events.index');
     }
 }

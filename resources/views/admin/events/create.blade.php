@@ -33,15 +33,15 @@
                 </div>
                 <div class="mb-3">
                     <label for="date" class="form-label">Date</label>
-                    <input type="text" class="form-control @error('date') is-invalid @enderror" id="date"
+                    <input type="date" class="form-control @error('date') is-invalid @enderror" id="date"
                         placeholder="Insert Conslution" name= "date" value="{{ old('date') }}">
                 </div>
                 <div class="mb-3">
                     <label for="capacity" class="form-label">Capacity</label>
-                    <input type="text" class="form-control @error('capacity') is-invalid @enderror" id="capacity"
+                    <input type="number" class="form-control @error('capacity') is-invalid @enderror" id="capacity"
                         placeholder="Insert Conslution" name= "capacity" value="{{ old('capacity') }}">
                 </div>
-                <div class="mb-3">
+                {{--                 <div class="mb-3">
                     <label for="exampleSelect" class="form-label">Select multiple options</label>
                     <select class="form-select" name="tags[]" id="tags" multiple>
 
@@ -50,7 +50,7 @@
                         @endforeach
 
                     </select>
-                </div>
+                </div> --}}
         </div>
 
         <button type="submit" class="btn btn-primary">Insert</button>

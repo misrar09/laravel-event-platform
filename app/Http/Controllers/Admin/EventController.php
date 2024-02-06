@@ -45,9 +45,9 @@ class EventController extends Controller
         $newEvent->fill($validated);
         $newEvent->save();
 
-        /*         if ($request->authors) {
-            $newEvent->authors()->attach($request->authors);
-        } */
+        if ($request->tags) {
+            $newEvent->tags()->attach($request->tags);
+        }
 
         return redirect()->route("admin.events.index");
     }

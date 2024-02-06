@@ -41,16 +41,16 @@
                     <input type="text" class="form-control @error('capacity') is-invalid @enderror" id="capacity"
                         placeholder="Insert Conslution" name= "capacity" value="{{ old('capacity') }}">
                 </div>
-                {{--                 <div class="mb-3">
+                <div class="mb-3">
                     <label for="exampleSelect" class="form-label">Select multiple options</label>
-                    <select class="form-select" name="authors[]" id="authors" multiple>
+                    <select class="form-select" name="tags[]" id="tags" multiple>
 
-                        @foreach ($authors as $author)
-                            <option value="{{ $author->id }}">{{ $author->name }}</option>
+                        @foreach ($tags as $tag)
+                            <option value="{{ $tag->id }}">{{ $tag->name }}</option>
                         @endforeach
 
                     </select>
-                </div> --}}
+                </div>
         </div>
 
         <button type="submit" class="btn btn-primary">Insert</button>

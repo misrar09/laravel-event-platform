@@ -29,20 +29,20 @@
                 <div class="mb-3">
                     <label for="organizer" class="form-label">Organizer</label>
                     <input type="text" class="form-control @error('organizer') is-invalid @enderror" id="organizer"
-                        placeholder="Insert Descriptoin" name= "organizer" value="{{ old('organizer') }}">
+                        placeholder="Insert organizer" name= "organizer" value="{{ old('organizer') }}">
                 </div>
                 <div class="mb-3">
                     <label for="date" class="form-label">Date</label>
                     <input type="date" class="form-control @error('date') is-invalid @enderror" id="date"
-                        placeholder="Insert Conslution" name= "date" value="{{ old('date') }}">
+                        placeholder="Insert date" name= "date" value="{{ old('date') }}">
                 </div>
                 <div class="mb-3">
                     <label for="capacity" class="form-label">Capacity</label>
                     <input type="number" class="form-control @error('capacity') is-invalid @enderror" id="capacity"
-                        placeholder="Insert Conslution" name= "capacity" value="{{ old('capacity') }}">
+                        placeholder="Insert Capacity" name= "capacity" value="{{ old('capacity') }}">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleSelect" class="form-label">Select multiple options</label>
+                    <label for="exampleSelect" class="form-label">Select tag/s</label>
                     <select class="form-select" name="tags[]" id="tags" multiple>
 
                         @foreach ($tags as $tag)

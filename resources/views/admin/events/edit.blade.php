@@ -29,7 +29,7 @@
                 <div class="mb-3">
                     <label for="organizer" class="form-label">Organizer</label>
                     <input type="text" class="form-control @error('organizer') is-invalid @enderror" id="organizer"
-                        placeholder="Insert Descriptoin" name= "organizer"
+                        placeholder="Insert organizer" name= "organizer"
                         value="{{ old('organizer') ?? $event->organizer }}">
                 </div>
                 <div class="mb-3">

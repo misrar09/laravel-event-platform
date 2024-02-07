@@ -44,8 +44,11 @@ class EventController extends Controller
     {
         $validated = $request->validated();
 
+        $userID = auth()->id();
+
         $newEvent = new Event();
         $newEvent->fill($validated);
+        $newEvent->user_id = $userID;
         $newEvent->save();
 
         if ($request->tags) {

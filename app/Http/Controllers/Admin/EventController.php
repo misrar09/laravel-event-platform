@@ -48,7 +48,9 @@ class EventController extends Controller
 
         $newEvent = new Event();
         $newEvent->fill($validated);
+
         $newEvent->user_id = $userID;
+
         $newEvent->save();
 
         if ($request->tags) {

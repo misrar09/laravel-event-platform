@@ -3,12 +3,16 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController; //<---- Import del controller precedentemente creato!
 use App\Http\Controllers\Admin\EventController;
+use App\Models\User;
 
 /* ... */
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+
 
 Route::middleware(['auth'])
     ->prefix('admin') //definisce il prefisso "admin/" per le rotte di questo gruppo
@@ -22,5 +26,7 @@ Route::middleware(['auth'])
 
         Route::resource('events', EventController::class);
     });
+
+
 
 require __DIR__ . '/auth.php';

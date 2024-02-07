@@ -43,16 +43,19 @@
                     <input type="number" class="form-control @error('capacity') is-invalid @enderror" id="capacity"
                         placeholder="Insert capacity" name= "capacity" value="{{ old('date') ?? $event->capacity }}">
                 </div>
-                {{--                 <div class="mb-3">
-                    <label for="exampleSelect" class="form-label">Select multiple options</label>
-                    <select class="form-select" name="authors[]" id="authors" multiple>
 
-                        @foreach ($authors as $author)
-                            <option value="{{ $author->id }}">{{ $author->name }}</option>
+                <div class="mb-3">
+                    <label for="exampleSelect" class="form-label">Select tag/s</label>
+                    <select class="form-select" name="tags[]" id="tags" multiple>
+                        @foreach ($tags as $tag)
+                            <option value="{{ $tag->id }}"
+                                {{ in_array($tag->id, $event->tags->pluck('id')->toArray()) ? 'selected' : '' }}>
+                                {{ $tag->name }}
+                            </option>
                         @endforeach
-
                     </select>
-                </div> --}}
+                </div>
+
                 <div>
                     <button type="submit" class="btn btn-primary">Modify</button>
                 </div>

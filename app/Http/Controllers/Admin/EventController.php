@@ -93,7 +93,9 @@ class EventController extends Controller
         $validated = $request->validated();
 
         $event->fill($validated);
+        $event->tags()->detach();
         $event->update();
+
 
         if ($request->tags) {
             $event->tags()->attach($request->tags);

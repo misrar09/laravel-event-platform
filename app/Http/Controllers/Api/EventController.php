@@ -11,7 +11,7 @@ class EventController extends Controller
     public function index()
     {
 
-        $results = Event::with('user')->get();
+        $results = Event::with('user', 'tags:name')->get();
 
 
         $data = [

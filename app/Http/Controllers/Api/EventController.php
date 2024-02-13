@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Event;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -11,7 +12,7 @@ class EventController extends Controller
     public function index()
     {
 
-        $results = Event::with('user', 'tags:name')->get();
+        $results = Event::with('user', 'tags')->get();
 
 
         $data = [
@@ -30,5 +31,17 @@ class EventController extends Controller
         }
 
         return response()->json(['success' => true, 'results' => $event]);
+    }
+
+
+
+    public function tag()
+    {
+        $results = Tag::all();
+        $data = [
+            'success' => true,
+            'results' => $results,
+        ];
+        return response()->json($data);
     }
 }

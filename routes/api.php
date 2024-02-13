@@ -31,3 +31,5 @@ Route::get('/users', function () {
 Route::get('/events', [ApiEventController::class, 'index']);
 
 Route::get('/events/{id}', [ApiEventController::class, 'show']);
+
+Route::get('/tags', [ApiEventController::class, 'index']);

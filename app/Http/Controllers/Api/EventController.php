@@ -35,7 +35,7 @@ class EventController extends Controller
 
 
 
-    public function tag()
+    public function tags()
     {
         $results = Tag::all();
         $data = [
